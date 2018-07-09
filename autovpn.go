@@ -53,6 +53,12 @@ func main() {
 			continue
 		}
 
+		// Add in DNS resolv.conf scripts for linux servers
+		conf += "script-security 2\n
+				up /etc/openvpn/update-resolv-conf\n
+				down /etc/openvpn/update-resolv-conf\n"
+		fmt.Printf("config: \n" + conf + "\n")
+
 		fmt.Printf("[autovpn] writing config file\n")
 		err = ioutil.WriteFile("/tmp/openvpnconf", conf, 0664)
 		check(err)
