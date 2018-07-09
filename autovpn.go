@@ -54,9 +54,9 @@ func main() {
 		}
 
 		// Add in DNS resolv.conf scripts for linux servers
-		conf2 := `script-security 2
-up /etc/openvpn/update-resolv-conf
-down /etc/openvpn/update-resolv-conf`
+		conf2 := "script-security 2\n" +
+				 "up /etc/openvpn/update-resolv-conf\n" +
+				 "down /etc/openvpn/update-resolv-conf\n"
 		conf = append(conf, conf2...)
 		// fmt.Printf("%q\n", conf)
 
