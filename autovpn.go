@@ -58,7 +58,8 @@ func main() {
 				 "up /etc/openvpn/update-resolv-conf\n" +
 				 "down /etc/openvpn/update-resolv-conf\n" +
 				 "\n" +
-				 "route-nopull\n"
+				 "route-nopull\n" +
+				 "route 0.0.0.0 128.0.0.0\n"
 		conf = append(conf, conf2...)
 		// fmt.Printf("%q\n", conf)
 
